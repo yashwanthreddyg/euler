@@ -18,6 +18,7 @@ def getLCM(arr):
         num = arr[index]
         factordict[num] = get_prime_factors(num)
     # print factordict
+	
     final = {}
     for key in factordict:
         factorlist = factordict[key]
