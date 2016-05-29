@@ -24,12 +24,25 @@ def isprime(n):
 
 def main(num):
     primeCount = 2
-    numToCheck = 5
+    if num == 1:
+        return 2
+    if num == 2:
+        return 3
+    #every prime can be represented as (6k +/- 1)
+    k=1
     while True:
-        if isprime(numToCheck):
+        numToCheck1 = 6*k - 1
+        numToCheck2 = 6*k + 1
+        if isprime(numToCheck1):
             primeCount+=1
-            if primeCount == num:
-                return numToCheck
-        numToCheck+=2
+        if primeCount == num:
+            return numToCheck1
+
+        if isprime(numToCheck2):
+            primeCount+=1
+        if primeCount == num:
+            return numToCheck2
+        k+=1
+
 
 print main(10001)
